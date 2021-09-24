@@ -1,21 +1,27 @@
 <template>
-  <MainLayout>
-    <p>HELLO BRUV</p>
-  </MainLayout>
+  <main-layout>
+    <p class="text-3xl text-center">{{ meow }}</p>
+    <el-button type="primary" @click="someFunc">Don't touch me :(</el-button>
+  </main-layout>
 </template>
 
-<script setup lang="ts">
-  import MainLayout from "@/layouts/main.vue";
+<script lang="ts">
   import { defineComponent, ref } from "vue";
 
-  defineComponent({
-    name: "MainLayout",
+  const meow = ref("hello butt fart");
+
+
+  export default defineComponent({
+    name: "Index",
     components: {},
     setup() {
-      const message = ref("hello");
+      const someFunc = () => {
+        console.log("MEOW");
+      }
 
       return {
-        message,
+        meow,
+        someFunc
       };
     },
   });
