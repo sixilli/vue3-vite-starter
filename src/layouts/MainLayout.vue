@@ -1,13 +1,19 @@
 <template>
   <div class="common-layout">
-    <div class="el-container">
-      <div class="el-header">
-        <p>Joel is stinky :(</p>
-      </div>
-      <div class="el-main">
-        <slot></slot>
-      </div>
-    </div>
+    <el-container>
+      <el-header>
+        <el-row>
+          <el-col>
+            <h1 class="joel-stinky">Joel is pretty stinky :(</h1>
+          </el-col>
+        </el-row>
+      </el-header>
+      <el-main>
+        <el-col>
+          <slot name="main"></slot>
+        </el-col>
+      </el-main>
+    </el-container>
   </div>
 </template>
 
@@ -19,3 +25,9 @@
     components: {},
   });
 </script>
+
+<style lang="css">
+  .joel-stinky {
+    font-size: 2rem;
+  }
+</style>
